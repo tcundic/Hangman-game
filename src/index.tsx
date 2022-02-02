@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './components/App';
 import reportWebVitals from './reportWebVitals';
 
 // styles libraries
@@ -8,11 +7,12 @@ import 'normalize.css';
 import 'bulma/css/bulma.min.css';
 import './styles/styles.css';
 
+// components
+import AppRouter from "./routers/AppRouter";
+
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+    <AppRouter />,
+    document.getElementById('root')
 );
 
 // If you want to start measuring performance in your app, pass a function
