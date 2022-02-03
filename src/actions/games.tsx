@@ -1,6 +1,4 @@
 // SET_USERNAME
-import Game from "../models/game";
-
 export const setUserName = (userName: string) => ({
     type: 'SET_USERNAME',
     userName
@@ -20,10 +18,12 @@ export const incrementError = () => ({
 
 // START_TIMING
 export const startTiming = () => ({
-    type: 'START_TIMING'
+    type: 'START_TIMING',
+    startTime: new Date().getTime()
 });
 
 // END_TIMING
 export const endTiming = () => ({
-    type: 'END_TIMING'
+    type: 'END_TIMING',
+    endTime: new Date().getTime()
 });
