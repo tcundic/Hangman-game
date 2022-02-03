@@ -29,17 +29,17 @@ const gamesReducer = (state = gamesReducerDefaultState, action: GameAction) => {
         case 'INCREMENT_ERROR':
             return {
                 ...state,
-                errors: state.errors++
+                errors: ++state.errors
             }
         case 'START_TIMING':
             return {
                 ...state,
-                duration: new Date().getTime()
+                duration: action.startTime
             }
         case 'END_TIMING':
             return {
                 ...state,
-                duration: new Date().getTime() - state.duration
+                duration: action.endTime ? action.endTime - state.duration : state.duration
             }
         default:
             return state;

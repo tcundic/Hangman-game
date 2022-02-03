@@ -1,5 +1,7 @@
 import { endTiming, incrementError, setQuote, setUserName, startTiming } from "../../actions/games";
 
+const timeNow = () => new Date().getTime();
+
 test('should setup set user name action object', () => {
     const action = setUserName('username');
 
@@ -28,19 +30,32 @@ test('should setup increment error action object', () => {
 });
 
 test('should setup start timing action object', () => {
+    const mockDate = new Date(1643919358043);
+    const spy = jest
+        .spyOn(global, 'Date')
+        .mockImplementation(() => mockDate);
+
     const action = startTiming();
 
     expect(action).toEqual({
         type: 'START_TIMING',
-        startTime: expect.any(Number)
+        startTime: 1643919358043
     });
+
+    spy.mockRestore();
 });
 
 test('should setup end timing action object', () => {
+    const mockDate = new Date(1643919374122);
+    const spy = jest
+        .spyOn(global, 'Date')
+        .mockImplementation(() => mockDate);
     const action = endTiming();
 
     expect(action).toEqual({
         type: 'END_TIMING',
-        endTime: expect.any(Number)
+        endTime: 1643919374122
     });
+
+    spy.mockRestore();
 });

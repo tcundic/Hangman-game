@@ -3,17 +3,6 @@
 import Highscore from "../models/highscore";
 import HighscoresAction from "../models/highscoresAction";
 
-const highscoresReducerDefaultState: Array<Highscore> = [];
-
-const highscoreReducer = (state = highscoresReducerDefaultState, action: HighscoresAction) => {
-    switch (action.type) {
-        case 'SET_HIGHSCORES':
-            return action.highscores.sort(sortHighscores);
-        default:
-            return state;
-    }
-};
-
 function sortHighscores(a: Highscore, b: Highscore) {
     if (
         a.errors === b.errors &&
@@ -33,4 +22,15 @@ function sortHighscores(a: Highscore, b: Highscore) {
     }
 };
 
-export default highscoreReducer;
+const highscoresReducerDefaultState: Array<Highscore> = [];
+
+const highscoresReducer = (state = highscoresReducerDefaultState, action: HighscoresAction) => {
+    switch (action.type) {
+        case 'SET_HIGHSCORES':
+            return action.highscores.sort(sortHighscores)
+        default:
+            return state;
+    }
+};
+
+export default highscoresReducer;
