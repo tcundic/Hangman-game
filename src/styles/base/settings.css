@@ -1,6 +1,8 @@
 :root {
     /* Colors */
     --background: #dbe7ff;
+    --blue: #1591FF;
+    --white: #fff;
 
     /* Spacing */
     --m-size: 1.6rem;

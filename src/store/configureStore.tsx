@@ -2,7 +2,7 @@
 
 import {combineReducers, createStore} from "redux";
 import gameReducer from '../reducers/games';
-import highscoresReducer from '../reducers/highscore';
+import highscoresReducer from '../reducers/highscores';
 
 const configureStore = () => {
     const store = createStore(

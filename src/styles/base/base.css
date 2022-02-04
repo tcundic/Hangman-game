@@ -7,3 +7,7 @@ body {
     font-family: Helvetica, Arial, sans-serif;
     font-size: var(--m-size);
 }
+
+h1 {
+    font-size: var(--xl-size);
+}
