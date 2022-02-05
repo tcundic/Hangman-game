@@ -1,7 +1,7 @@
 import React from "react";
 import {BrowserRouter, Navigate, Route, Routes} from "react-router-dom";
-import App from "../components/App";
 import Header from "../components/Header";
+import App from "../components/App";
 
 const AppRouter = () => (
     <React.StrictMode>

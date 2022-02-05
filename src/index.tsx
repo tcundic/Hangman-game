@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import reportWebVitals from './reportWebVitals';
+import { Provider } from 'react-redux';
 
 // styles libraries
 import 'normalize.css';
@@ -14,10 +15,10 @@ import configureStore from "./store/configureStore";
 
 const store = configureStore();
 
-console.log(store.getState());
-
 ReactDOM.render(
-    <AppRouter />,
+    <Provider store={store}>
+        <AppRouter />
+    </Provider>,
     document.getElementById('root')
 );
 
