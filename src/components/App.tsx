@@ -1,5 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
+import {Navigate} from "react-router-dom";
 import Game from "../models/game";
 import Highscore from "../models/highscore";
 import Props from "../models/Props";
@@ -24,6 +25,10 @@ export class App extends React.Component<Props> {
     }
 
     render() {
+        if (this.props.game?.userName) {
+            return <Navigate to="/play" />;
+        }
+
         return (
             <div className="container mt-6">
                 <label className="label is-large">Username</label>

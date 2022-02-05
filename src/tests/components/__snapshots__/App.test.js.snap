@@ -1,5 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`should redirect user when username is not empty 1`] = `
+<Navigate
+  to="/play"
+/>
+`;
+
 exports[`should render App correctly 1`] = `
 <div
   className="container mt-6"
