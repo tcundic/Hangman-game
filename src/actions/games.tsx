@@ -13,7 +13,8 @@ export const setQuote = (quoteId: string, content: string) => ({
 
 // RESET_GAME
 export const resetCurrentGame = () => ({
-    type: 'RESET_GAME'
+    type: 'RESET_GAME',
+    startTime: new Date().getTime()
 });
 
 // START_TIMING

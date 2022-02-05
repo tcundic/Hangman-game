@@ -6,6 +6,7 @@ import Highscore from "../models/highscore";
 import LetterButton from "./LetterButton";
 import {stopTiming, useLetter} from "../actions/games";
 import {mapDispatchToProps, mapStateToProps, isFinishedGame} from "../utils/utilMethods";
+import {sendStatistics} from "../utils/http";
 
 export class LettersButtons extends React.Component<Props> {
     letters: Array<string>;
@@ -15,6 +16,27 @@ export class LettersButtons extends React.Component<Props> {
 
         const alpha: Array<number> = Array.from(Array(26)).map((e, i) => i + 65);
         this.letters = alpha.map((x) => String.fromCharCode(x));
+    }
+
+    componentDidUpdate(prevProps: Readonly<Props>, prevState: Readonly<{}>, snapshot?: any) {
+        if (isFinishedGame(this.props.game?.content || "", this.props.game?.revealedLetters || [])) {
+
+            const quoteId = this.props.game?.quoteId || "";
+            const length = this.props.game?.length || 0;
+            const uniqueCharacters = this.props.game?.uniqueCharacters || 0;
+            const userName = this.props.game?.userName || "";
+            const errors = this.props.game?.errors || 0;
+            const duration = this.props.game?.duration || 0;
+
+            sendStatistics({
+                quoteId,
+                length,
+                uniqueCharacters,
+                userName,
+                errors,
+                duration
+            });
+        }
     }
 
     onLetterClick = (e: React.ChangeEvent<any>) => {

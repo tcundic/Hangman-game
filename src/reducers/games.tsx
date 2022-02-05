@@ -38,7 +38,7 @@ const gamesReducer = (state = gamesReducerDefaultState, action: GameAction) => {
                 usedLetters: [],
                 revealedLetters: [],
                 errors: 0,
-                duration: 0
+                duration: action.startTime
             }
         case 'START_TIMING':
             return {
