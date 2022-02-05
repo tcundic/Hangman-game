@@ -1,20 +1,20 @@
 import React from "react";
 import Props from "../models/Props";
 import {connect} from "react-redux";
-import {getNewQuote, getUniqueLetters, mapDispatchToProps, mapStateToProps} from "../utils/utilMethods";
+// import {getNewQuote, getUniqueLetters, mapDispatchToProps, mapStateToProps} from "../utils/utilMethods";
+import * as utils from "../utils/utilMethods";
 
 export const PlayerSettings = (props: Props) => {
 
     const resetGame = async () => {
-        const quote = await getNewQuote()
+        const quote = await utils.getNewQuote()
         if (quote) {
             props.resetGame(quote.id, quote.content);
         }
     };
 
     const isFinishedGame = () => {
-        const uniqueCharacters = getUniqueLetters(props.game?.content || "");
-        return uniqueCharacters.size === props.game?.revealedLetters.length;
+        return utils.isFinishedGame(props.game?.content || "", props.game?.revealedLetters || [])
     };
 
     return (
@@ -38,4 +38,4 @@ export const PlayerSettings = (props: Props) => {
     );
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(PlayerSettings);
+export default connect(utils.mapStateToProps, utils.mapDispatchToProps)(PlayerSettings);

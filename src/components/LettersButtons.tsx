@@ -4,8 +4,8 @@ import Props from "../models/Props";
 import Game from "../models/game";
 import Highscore from "../models/highscore";
 import LetterButton from "./LetterButton";
-import {useLetter} from "../actions/games";
-import {mapDispatchToProps, mapStateToProps} from "../utils/utilMethods";
+import {stopTiming, useLetter} from "../actions/games";
+import {mapDispatchToProps, mapStateToProps, isFinishedGame} from "../utils/utilMethods";
 
 export class LettersButtons extends React.Component<Props> {
     letters: Array<string>;
@@ -19,6 +19,10 @@ export class LettersButtons extends React.Component<Props> {
 
     onLetterClick = (e: React.ChangeEvent<any>) => {
         this.props.dispatch(useLetter(e.target.textContent));
+
+        if (isFinishedGame(this.props.game?.content || "", this.props.game?.revealedLetters || [])) {
+            this.props.dispatch(stopTiming());
+        }
     };
 
     render() {

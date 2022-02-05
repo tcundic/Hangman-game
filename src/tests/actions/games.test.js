@@ -1,4 +1,4 @@
-import { endTiming, incrementError, setQuote, setUserName, startTiming, useLetter } from "../../actions/games";
+import { stopTiming, incrementError, setQuote, setUserName, startTiming, useLetter } from "../../actions/games";
 
 const timeNow = () => new Date().getTime();
 
@@ -50,7 +50,7 @@ test('should setup end timing action object', () => {
     const spy = jest
         .spyOn(global, 'Date')
         .mockImplementation(() => mockDate);
-    const action = endTiming();
+    const action = stopTiming();
 
     expect(action).toEqual({
         type: 'END_TIMING',

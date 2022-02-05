@@ -5,5 +5,6 @@ export default interface Props {
     game?: Game,
     highscores?: Array<Highscore>,
     dispatch: Function,
-    resetGame: Function
+    resetGame: Function,
+    startGame: Function
 };

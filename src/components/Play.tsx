@@ -4,7 +4,6 @@ import {Navigate} from "react-router-dom";
 
 import Props from "../models/Props";
 import LettersButtons from "./LettersButtons";
-import {setQuote} from "../actions/games";
 import HangmanSprites from "./HangmanSprites";
 import QuoteLetters from "./QuoteLetters";
 import PlayerSettings from "./PlayerSettings";
@@ -19,7 +18,7 @@ export class Play extends React.Component<Props> {
     getQuote = async () => {
         const quote = await getNewQuote()
         if (quote) {
-            this.props.dispatch(setQuote(quote.id, quote.content));
+            this.props.startGame(quote.id, quote.content);
         }
     }
 

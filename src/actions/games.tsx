@@ -23,8 +23,8 @@ export const startTiming = () => ({
 });
 
 // END_TIMING
-export const endTiming = () => ({
-    type: 'END_TIMING',
+export const stopTiming = () => ({
+    type: 'STOP_TIMING',
     endTime: new Date().getTime()
 });
 

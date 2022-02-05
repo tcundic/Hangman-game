@@ -44,7 +44,7 @@ const gamesReducer = (state = gamesReducerDefaultState, action: GameAction) => {
                 ...state,
                 duration: action.startTime
             }
-        case 'END_TIMING':
+        case 'STOP_TIMING':
             return {
                 ...state,
                 duration: action.endTime ? action.endTime - state.duration : state.duration
