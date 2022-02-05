@@ -48,7 +48,7 @@ const gamesReducer = (state = gamesReducerDefaultState, action: GameAction) => {
             const usedLetter = action.usedLetter;
 
             if (usedLetter && state.content.indexOf(usedLetter) > -1) {
-                const quote = state.content.replace(/\s/g, "");
+                const quote = state.content.replace(/[^A-Za-z]/g, "");
                 for (let i = 0; i < quote.length; i++) {
                     if (quote[i] === usedLetter) {
                         revealedLetters[i] = true;

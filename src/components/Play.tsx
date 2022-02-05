@@ -6,10 +6,21 @@ import Props from "../models/Props";
 import Highscore from "../models/highscore";
 import Game from "../models/game";
 import Letters from "./Letters";
+import {getRandomQuote} from "../utils/http";
+import {setQuote} from "../actions/games";
 
 export class Play extends React.Component<Props> {
-    constructor(props: Props) {
-        super(props);
+
+    componentDidMount() {
+        this.getNewQuote();
+    }
+
+    getNewQuote = async () => {
+        const res = await getRandomQuote();
+        if (res) {
+            const {id, content} = res;
+            this.props.dispatch(setQuote(id, content));
+        }
     }
 
     render() {
