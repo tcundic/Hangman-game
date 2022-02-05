@@ -5,7 +5,7 @@ import {Navigate} from "react-router-dom";
 import Props from "../models/Props";
 import Highscore from "../models/highscore";
 import Game from "../models/game";
-import Letters from "./LettersButtons";
+import LettersButtons from "./LettersButtons";
 import {getRandomQuote} from "../utils/http";
 import {setQuote} from "../actions/games";
 import HangmanSprites from "./HangmanSprites";
@@ -35,7 +35,7 @@ export class Play extends React.Component<Props> {
                 <GameLabels />
                 <HangmanSprites />
                 <QuoteLetters />
-                <Letters />
+                <LettersButtons />
             </div>
         );
     }

@@ -48,6 +48,11 @@ const gamesReducer = (state = gamesReducerDefaultState, action: GameAction) => {
             const revealedLetters = state.revealedLetters;
             const usedLetter = action.usedLetter?.toLowerCase();
             let quote = getUniqueLetters(state.content);
+            let errors = state.errors;
+
+            if (usedLetter && !quote.has(usedLetter)) {
+                errors = ++errors;
+            }
 
             if (usedLetter && quote.has(usedLetter) && revealedLetters.indexOf(usedLetter) === -1) {
                 revealedLetters.push(usedLetter)
@@ -56,7 +61,8 @@ const gamesReducer = (state = gamesReducerDefaultState, action: GameAction) => {
             return {
                 ...state,
                 usedLetters: [...state.usedLetters, action.usedLetter],
-                revealedLetters
+                revealedLetters,
+                errors
             }
         default:
             return state;
