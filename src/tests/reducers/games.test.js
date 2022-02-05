@@ -7,7 +7,9 @@ const defaultState = {
     duration: 0,
     errors: 0,
     length: 0,
-    uniqueCharacters: 0
+    uniqueCharacters: 0,
+    usedLetters: [],
+    quoteLetters: {}
 };
 
 test('should set default state', () => {
@@ -87,5 +89,25 @@ test('should calculate duration', () => {
     expect(state).toEqual({
         ...defaultState,
         duration: endTime - startTime
+    });
+});
+
+test('should use letter', () => {
+    const action = {
+        type: 'USE_LETTER',
+        usedLetter: 'A'
+    };
+
+    const state = gamesReducer({
+        ...defaultState,
+        quoteLetters: {'A': false}
+    }, action);
+
+    // letter button should be disabled and
+    // letter in quote should be revealed
+    expect(state).toEqual({
+        ...defaultState,
+        usedLetters: ['A'],
+        quoteLetters: {'A': true}
     });
 });

@@ -44,9 +44,17 @@ const gamesReducer = (state = gamesReducerDefaultState, action: GameAction) => {
                 duration: action.endTime ? action.endTime - state.duration : state.duration
             }
         case 'USE_LETTER':
+            const quoteLetters = state.quoteLetters;
+            const usedLetter = action.usedLetter;
+
+            if (usedLetter && usedLetter in quoteLetters && !quoteLetters[usedLetter]) {
+                quoteLetters[usedLetter] = true;
+            }
+
             return {
                 ...state,
-                usedLetters: [...state.usedLetters, action.usedLetter]
+                usedLetters: [...state.usedLetters, action.usedLetter],
+                quoteLetters: quoteLetters
             }
         default:
             return state;

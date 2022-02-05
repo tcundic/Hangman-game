@@ -7,5 +7,5 @@ export default interface Game {
     errors: number,
     duration: number,
     usedLetters: Array<String>,
-    quoteLetters: {[letter: string]: boolean}
+    quoteLetters: { [letter: string]: boolean }
 }

@@ -32,12 +32,12 @@ exports[`should render App correctly 1`] = `
     <p
       className="control"
     >
-      <a
+      <button
         className="button is-info is-large"
         onClick={[Function]}
       >
         Save username
-      </a>
+      </button>
     </p>
   </div>
 </div>

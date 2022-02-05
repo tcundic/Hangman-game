@@ -1,4 +1,4 @@
-import { endTiming, incrementError, setQuote, setUserName, startTiming } from "../../actions/games";
+import { endTiming, incrementError, setQuote, setUserName, startTiming, useLetter } from "../../actions/games";
 
 const timeNow = () => new Date().getTime();
 
@@ -58,4 +58,14 @@ test('should setup end timing action object', () => {
     });
 
     spy.mockRestore();
+});
+
+
+test('should setup use letter action object', () => {
+    const action = useLetter('A');
+
+    expect(action).toEqual({
+        type: 'USE_LETTER',
+        usedLetter: 'A'
+    });
 });
