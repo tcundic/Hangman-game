@@ -4,6 +4,7 @@ import Props from "../models/Props";
 import Highscore from "../models/highscore";
 import Game from "../models/game";
 import QuoteLetter from "./QuoteLetter";
+import {mapDispatchToProps, mapStateToProps} from "../utils/utilMethods";
 
 export class QuoteLetters extends React.Component<Props> {
 
@@ -30,10 +31,4 @@ export class QuoteLetters extends React.Component<Props> {
     }
 }
 
-const mapStateToProps = (state: { game: Game, highscores: Array<Highscore> }) => {
-    return {
-        game: state.game
-    };
-};
-
-export default connect(mapStateToProps)(QuoteLetters);
+export default connect(mapStateToProps, mapDispatchToProps)(QuoteLetters);

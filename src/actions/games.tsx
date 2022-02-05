@@ -11,9 +11,9 @@ export const setQuote = (quoteId: string, content: string) => ({
     content
 });
 
-// INCREMENT_ERROR
-export const incrementError = () => ({
-    type: 'INCREMENT_ERROR'
+// RESET_GAME
+export const resetCurrentGame = () => ({
+    type: 'RESET_GAME'
 });
 
 // START_TIMING

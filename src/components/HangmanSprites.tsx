@@ -4,6 +4,7 @@ import Props from "../models/Props";
 import Game from "../models/game";
 import Highscore from "../models/highscore";
 import Sprite from "../utils/Sprite";
+import {mapDispatchToProps, mapStateToProps} from "../utils/utilMethods";
 
 export class HangmanSprites extends React.Component<Props> {
 
@@ -36,10 +37,4 @@ export class HangmanSprites extends React.Component<Props> {
     }
 };
 
-const mapStateToProps = (state: { game: Game, highscores: Array<Highscore> }) => {
-    return {
-        game: state.game
-    };
-};
-
-export default connect(mapStateToProps)(HangmanSprites);
+export default connect(mapStateToProps, mapDispatchToProps)(HangmanSprites);

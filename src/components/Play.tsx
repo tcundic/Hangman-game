@@ -3,26 +3,23 @@ import {connect} from "react-redux";
 import {Navigate} from "react-router-dom";
 
 import Props from "../models/Props";
-import Highscore from "../models/highscore";
-import Game from "../models/game";
 import LettersButtons from "./LettersButtons";
-import {getRandomQuote} from "../utils/http";
 import {setQuote} from "../actions/games";
 import HangmanSprites from "./HangmanSprites";
 import QuoteLetters from "./QuoteLetters";
-import GameLabels from "./GameLabels";
+import PlayerSettings from "./PlayerSettings";
+import {getNewQuote, mapDispatchToProps, mapStateToProps} from "../utils/utilMethods";
 
 export class Play extends React.Component<Props> {
 
     componentDidMount() {
-        this.getNewQuote();
+        this.getQuote();
     }
 
-    getNewQuote = async () => {
-        const res = await getRandomQuote();
-        if (res) {
-            const {id, content} = res;
-            this.props.dispatch(setQuote(id, content));
+    getQuote = async () => {
+        const quote = await getNewQuote()
+        if (quote) {
+            this.props.dispatch(setQuote(quote.id, quote.content));
         }
     }
 
@@ -32,7 +29,7 @@ export class Play extends React.Component<Props> {
         }
         return (
             <div className="container mt-6">
-                <GameLabels />
+                <PlayerSettings />
                 <HangmanSprites />
                 <QuoteLetters />
                 <LettersButtons />
@@ -41,10 +38,4 @@ export class Play extends React.Component<Props> {
     }
 };
 
-const mapStateToProps = (state: { game: Game, highscores: Array<Highscore> }) => {
-    return {
-        game: state.game
-    };
-};
-
-export default connect(mapStateToProps)(Play);
+export default connect(mapStateToProps, mapDispatchToProps)(Play);

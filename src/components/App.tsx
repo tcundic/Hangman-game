@@ -1,10 +1,9 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {Navigate} from "react-router-dom";
-import Game from "../models/game";
-import Highscore from "../models/highscore";
 import Props from "../models/Props";
 import {setUserName} from "../actions/games";
+import {mapDispatchToProps, mapStateToProps} from "../utils/utilMethods";
 
 export class App extends React.Component<Props> {
     state = {
@@ -49,10 +48,4 @@ export class App extends React.Component<Props> {
     }
 };
 
-const mapStateToProps = (state: { game: Game, highscores: Array<Highscore> }) => {
-    return {
-        game: state.game
-    };
-};
-
-export default connect(mapStateToProps)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(App);

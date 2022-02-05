@@ -5,6 +5,7 @@ import Game from "../models/game";
 import Highscore from "../models/highscore";
 import LetterButton from "./LetterButton";
 import {useLetter} from "../actions/games";
+import {mapDispatchToProps, mapStateToProps} from "../utils/utilMethods";
 
 export class LettersButtons extends React.Component<Props> {
     letters: Array<string>;
@@ -31,10 +32,4 @@ export class LettersButtons extends React.Component<Props> {
     }
 }
 
-const mapStateToProps = (state: { game: Game, highscores: Array<Highscore> }) => {
-    return {
-        game: state.game
-    };
-};
-
-export default connect(mapStateToProps)(LettersButtons);
+export default connect(mapStateToProps, mapDispatchToProps)(LettersButtons);

@@ -24,15 +24,20 @@ const gamesReducer = (state = gamesReducerDefaultState, action: GameAction) => {
                 userName: action.userName
             }
         case 'SET_QUOTE':
+            const uniqueCharacters = getUniqueLetters(action.content || "").size;
             return {
                 ...state,
                 quoteId: action.quoteId,
-                content: action.content
+                content: action.content,
+                length: action.content?.length,
+                uniqueCharacters
             }
-        case 'INCREMENT_ERROR':
+        case 'RESET_GAME':
             return {
                 ...state,
-                errors: ++state.errors
+                usedLetters: [],
+                revealedLetters: [],
+                errors: 0
             }
         case 'START_TIMING':
             return {
