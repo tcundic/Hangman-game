@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render Header correctly 1`] = `
+<div
+  className="header py-2"
+>
+  <div
+    className="container"
+  >
+    <h1
+      className="has-text-centered"
+    >
+      Hangman The Game
+    </h1>
+  </div>
+</div>
+`;

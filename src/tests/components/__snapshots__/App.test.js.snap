@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render App correctly 1`] = `
+<div
+  className="container mt-6"
+>
+  <label
+    className="label is-large"
+  >
+    Username
+  </label>
+  <div
+    className="field is-grouped"
+  >
+    <p
+      className="control"
+    >
+      <input
+        className="input is-large"
+        onChange={[Function]}
+        placeholder="Enter username"
+        type="text"
+        value=""
+      />
+    </p>
+    <p
+      className="control"
+    >
+      <a
+        className="button is-info is-large"
+        onClick={[Function]}
+      >
+        Save username
+      </a>
+    </p>
+  </div>
+</div>
+`;

@@ -5,7 +5,7 @@ import Highscore from "../models/highscore";
 import Props from "../models/Props";
 import {setUserName} from "../actions/games";
 
-class App extends React.Component<Props> {
+export class App extends React.Component<Props> {
     constructor(props: Props) {
         super(props);
     }
