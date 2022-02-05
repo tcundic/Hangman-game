@@ -6,6 +6,6 @@ export default interface Game {
     userName: string,
     errors: number,
     duration: number,
-    usedLetters: Array<String>,
-    quoteLetters: { [letter: string]: boolean }
+    usedLetters: Array<string>,
+    revealedLetters: Array<boolean>
 }

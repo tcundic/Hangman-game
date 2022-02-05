@@ -9,7 +9,7 @@ const defaultState = {
     length: 0,
     uniqueCharacters: 0,
     usedLetters: [],
-    quoteLetters: {}
+    revealedLetters: []
 };
 
 test('should set default state', () => {
@@ -100,14 +100,16 @@ test('should use letter', () => {
 
     const state = gamesReducer({
         ...defaultState,
-        quoteLetters: {'A': false}
+        content: 'A',
+        revealedLetters: [false]
     }, action);
 
     // letter button should be disabled and
     // letter in quote should be revealed
     expect(state).toEqual({
         ...defaultState,
+        content: 'A',
         usedLetters: ['A'],
-        quoteLetters: {'A': true}
+        revealedLetters: [true]
     });
 });

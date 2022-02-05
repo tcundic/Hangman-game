@@ -12,7 +12,7 @@ const gamesReducerDefaultState: Game = {
     length: 0,
     uniqueCharacters: 0,
     usedLetters: [],
-    quoteLetters: {}
+    revealedLetters: []
 };
 
 const gamesReducer = (state = gamesReducerDefaultState, action: GameAction) => {
@@ -44,17 +44,22 @@ const gamesReducer = (state = gamesReducerDefaultState, action: GameAction) => {
                 duration: action.endTime ? action.endTime - state.duration : state.duration
             }
         case 'USE_LETTER':
-            const quoteLetters = state.quoteLetters;
+            const revealedLetters = state.revealedLetters;
             const usedLetter = action.usedLetter;
 
-            if (usedLetter && usedLetter in quoteLetters && !quoteLetters[usedLetter]) {
-                quoteLetters[usedLetter] = true;
+            if (usedLetter && state.content.indexOf(usedLetter) > -1) {
+                const quote = state.content.replace(/\s/g, "");
+                for (let i = 0; i < quote.length; i++) {
+                    if (quote[i] === usedLetter) {
+                        revealedLetters[i] = true;
+                    }
+                }
             }
 
             return {
                 ...state,
                 usedLetters: [...state.usedLetters, action.usedLetter],
-                quoteLetters: quoteLetters
+                revealedLetters
             }
         default:
             return state;
