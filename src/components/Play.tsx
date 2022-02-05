@@ -8,6 +8,7 @@ import Game from "../models/game";
 import Letters from "./Letters";
 import {getRandomQuote} from "../utils/http";
 import {setQuote} from "../actions/games";
+import HangmanSprites from "./HangmanSprites";
 
 export class Play extends React.Component<Props> {
 
@@ -29,6 +30,7 @@ export class Play extends React.Component<Props> {
         }
         return (
             <div className="container mt-6">
+                <HangmanSprites />
                 <Letters />
             </div>
         );
