@@ -10,7 +10,9 @@ const gamesReducerDefaultState: Game = {
     duration: 0,
     errors: 0,
     length: 0,
-    uniqueCharacters: 0
+    uniqueCharacters: 0,
+    usedLetters: [],
+    quoteLetters: {}
 };
 
 const gamesReducer = (state = gamesReducerDefaultState, action: GameAction) => {
@@ -40,6 +42,11 @@ const gamesReducer = (state = gamesReducerDefaultState, action: GameAction) => {
             return {
                 ...state,
                 duration: action.endTime ? action.endTime - state.duration : state.duration
+            }
+        case 'USE_LETTER':
+            return {
+                ...state,
+                usedLetters: [...state.usedLetters, action.usedLetter]
             }
         default:
             return state;

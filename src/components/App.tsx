@@ -7,10 +7,6 @@ import Props from "../models/Props";
 import {setUserName} from "../actions/games";
 
 export class App extends React.Component<Props> {
-    constructor(props: Props) {
-        super(props);
-    }
-
     state = {
         username: ''
     };
@@ -43,9 +39,9 @@ export class App extends React.Component<Props> {
                         />
                     </p>
                     <p className="control">
-                        <a className="button is-info is-large" onClick={this.onUsernameSave}>
+                        <button className="button is-info is-large" onClick={this.onUsernameSave}>
                             Save username
-                        </a>
+                        </button>
                     </p>
                 </div>
             </div>

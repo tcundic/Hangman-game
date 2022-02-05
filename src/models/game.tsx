@@ -5,5 +5,7 @@ export default interface Game {
     uniqueCharacters: number,
     userName: string,
     errors: number,
-    duration: number
+    duration: number,
+    usedLetters: Array<String>,
+    quoteLetters: {[letter: string]: boolean}
 }

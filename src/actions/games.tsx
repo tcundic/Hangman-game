@@ -27,3 +27,8 @@ export const endTiming = () => ({
     type: 'END_TIMING',
     endTime: new Date().getTime()
 });
+
+export const useLetter = (letter: string) => ({
+    type: 'USE_LETTER',
+    usedLetter: letter
+});

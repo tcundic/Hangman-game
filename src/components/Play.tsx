@@ -5,6 +5,7 @@ import {Navigate} from "react-router-dom";
 import Props from "../models/Props";
 import Highscore from "../models/highscore";
 import Game from "../models/game";
+import Letters from "./Letters";
 
 export class Play extends React.Component<Props> {
     constructor(props: Props) {
@@ -17,7 +18,7 @@ export class Play extends React.Component<Props> {
         }
         return (
             <div className="container mt-6">
-                GAME COMPONENT
+                <Letters />
             </div>
         );
     }
