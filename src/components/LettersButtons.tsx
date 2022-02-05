@@ -3,10 +3,10 @@ import {connect} from "react-redux";
 import Props from "../models/Props";
 import Game from "../models/game";
 import Highscore from "../models/highscore";
-import Letter from "./Letter";
+import LetterButton from "./LetterButton";
 import {useLetter} from "../actions/games";
 
-export class Letters extends React.Component<Props> {
+export class LettersButtons extends React.Component<Props> {
     letters: Array<string>;
 
     constructor(props: Props) {
@@ -24,7 +24,7 @@ export class Letters extends React.Component<Props> {
         return (
             <div className="columns">
                 {this.letters.map(letter =>
-                    <Letter onClick={this.onLetterClick} key={letter} letter={letter} used={!!this.props.game?.usedLetters.includes(letter)} />
+                    <LetterButton onClick={this.onLetterClick} key={letter} letter={letter} used={!!this.props.game?.usedLetters.includes(letter)} />
                 )}
             </div>
         );
@@ -37,4 +37,4 @@ const mapStateToProps = (state: { game: Game, highscores: Array<Highscore> }) =>
     };
 };
 
-export default connect(mapStateToProps)(Letters);
+export default connect(mapStateToProps)(LettersButtons);

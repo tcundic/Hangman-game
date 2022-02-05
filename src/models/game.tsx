@@ -7,5 +7,5 @@ export default interface Game {
     errors: number,
     duration: number,
     usedLetters: Array<string>,
-    revealedLetters: Array<boolean>
+    revealedLetters: Array<string>
 }

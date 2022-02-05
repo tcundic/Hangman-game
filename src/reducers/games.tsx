@@ -2,6 +2,7 @@
 
 import Game from "../models/game";
 import GameAction from "../models/gameAction";
+import {getUniqueLetters} from "../utils/utilMethods";
 
 const gamesReducerDefaultState: Game = {
     quoteId: "",
@@ -45,15 +46,11 @@ const gamesReducer = (state = gamesReducerDefaultState, action: GameAction) => {
             }
         case 'USE_LETTER':
             const revealedLetters = state.revealedLetters;
-            const usedLetter = action.usedLetter;
+            const usedLetter = action.usedLetter?.toLowerCase();
+            let quote = getUniqueLetters(state.content);
 
-            if (usedLetter && state.content.indexOf(usedLetter) > -1) {
-                const quote = state.content.replace(/[^A-Za-z]/g, "");
-                for (let i = 0; i < quote.length; i++) {
-                    if (quote[i] === usedLetter) {
-                        revealedLetters[i] = true;
-                    }
-                }
+            if (usedLetter && quote.has(usedLetter) && revealedLetters.indexOf(usedLetter) === -1) {
+                revealedLetters.push(usedLetter)
             }
 
             return {

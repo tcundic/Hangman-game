@@ -1,6 +1,6 @@
 import React, {MouseEventHandler} from "react";
 
-const Letter = ({letter, used, onClick}: { letter: string, used: boolean, onClick: MouseEventHandler }) => {
+const LetterButton = ({letter, used, onClick}: { letter: string, used: boolean, onClick: MouseEventHandler }) => {
     return (
         <div className="column">
             {used ?
@@ -11,4 +11,4 @@ const Letter = ({letter, used, onClick}: { letter: string, used: boolean, onClic
     );
 };
 
-export default Letter;
+export default LetterButton;
