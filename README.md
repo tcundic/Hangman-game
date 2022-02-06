@@ -27,4 +27,6 @@ Your app is ready to be deployed!
 ### `npm run deploy`
 
 To deploy application on Github pages, first adjust `homepage` property in package.json\
-and then run this command. Application will be build and deployed on Github pages
+and then run this command. Application will be build and deployed on Github pages.
+
+You can see running application on [Github IO](https://tcundic.github.io/hangman-game/).
