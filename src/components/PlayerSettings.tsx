@@ -1,15 +1,17 @@
 import React from "react";
-import Props from "../models/Props";
 import {connect} from "react-redux";
-// import {getNewQuote, getUniqueLetters, mapDispatchToProps, mapStateToProps} from "../utils/utilMethods";
+import {useNavigate} from "react-router-dom";
+import Props from "../models/Props";
 import * as utils from "../utils/utilMethods";
 
 export const PlayerSettings = (props: Props) => {
 
+    const navigate = useNavigate();
+
     const resetGame = async () => {
         const quote = await utils.getNewQuote()
         if (quote) {
-            props.resetGame(quote.id, quote.content);
+            props.startGame(quote.id, quote.content);
         }
     };
 
@@ -29,7 +31,7 @@ export const PlayerSettings = (props: Props) => {
                 </button>
                 {isFinishedGame() &&
                     <button className="button is-info is-large is-pulled-right"
-                            onClick={() => console.log('Show highscore')}>
+                            onClick={() => navigate('/highscores')}>
                         Show highscore
                     </button>
                 }

@@ -20,13 +20,9 @@ const isFinishedGame = (quote: string, revealedLetters: Array<string>) => {
 
 const mapDispatchToProps = (dispatch: Function) => {
     return {
-        resetGame: (quoteId: string, content: string) => {
+        startGame: (quoteId: string, content: string) => {
             dispatch(resetCurrentGame());
             dispatch(setQuote(quoteId, content));
-        },
-        startGame: (quoteId: string, content: string) => {
-            dispatch(setQuote(quoteId, content));
-            dispatch(startTiming());
         },
         dispatch
     }
