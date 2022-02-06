@@ -1,7 +1,7 @@
 import {getRandomQuote} from "./http";
 import Game from "../models/game";
 import Highscore from "../models/highscore";
-import {resetCurrentGame, setQuote, startTiming} from "../actions/games";
+import {resetCurrentGame, setQuote} from "../actions/games";
 
 const getUniqueLetters = (quote: string) => new Set(quote.replace(/[^A-Za-z]/g, "").toLowerCase());
 

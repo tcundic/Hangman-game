@@ -8,7 +8,7 @@ exports[`should redirect user when username is not empty 1`] = `
 
 exports[`should render App correctly 1`] = `
 <div
-  className="container mt-6"
+  className="container mt-6 has-text-centered-touch"
 >
   <label
     className="label is-large"
@@ -19,7 +19,7 @@ exports[`should render App correctly 1`] = `
     className="field is-grouped"
   >
     <p
-      className="control"
+      className="control is-hidden-touch"
     >
       <input
         className="input is-large"
@@ -30,7 +30,24 @@ exports[`should render App correctly 1`] = `
       />
     </p>
     <p
-      className="control"
+      className="control is-hidden-desktop mx-auto"
+    >
+      <input
+        className="input is-large mb-5"
+        onChange={[Function]}
+        placeholder="Enter username"
+        type="text"
+        value=""
+      />
+      <button
+        className="button is-info is-large"
+        onClick={[Function]}
+      >
+        Save username
+      </button>
+    </p>
+    <p
+      className="control is-hidden-touch"
     >
       <button
         className="button is-info is-large"

@@ -1,4 +1,12 @@
-import { stopTiming, incrementError, setQuote, setUserName, startTiming, useLetter } from "../../actions/games";
+import {
+    stopTiming,
+    incrementError,
+    setQuote,
+    setUserName,
+    startTiming,
+    useLetter,
+    resetCurrentGame
+} from "../../actions/games";
 
 const timeNow = () => new Date().getTime();
 
@@ -21,12 +29,20 @@ test('should setup set quote action object', () => {
     });
 });
 
-test('should setup increment error action object', () => {
-    const action = incrementError();
+test('should setup reset game action object', () => {
+    const mockDate = new Date(1643919358043);
+    const spy = jest
+        .spyOn(global, 'Date')
+        .mockImplementation(() => mockDate);
+
+    const action = resetCurrentGame();
 
     expect(action).toEqual({
-        type: 'INCREMENT_ERROR'
+        type: 'RESET_GAME',
+        startTime: 1643919358043
     });
+
+    spy.mockRestore();
 });
 
 test('should setup start timing action object', () => {
@@ -53,7 +69,7 @@ test('should setup end timing action object', () => {
     const action = stopTiming();
 
     expect(action).toEqual({
-        type: 'END_TIMING',
+        type: 'STOP_TIMING',
         endTime: 1643919374122
     });
 

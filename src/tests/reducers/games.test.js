@@ -35,25 +35,35 @@ test('should set quote', () => {
         type: 'SET_QUOTE',
         quoteId: '1',
         content: "New quote"
-    }
+    };
 
     const state = gamesReducer(defaultState, action);
     expect(state).toEqual({
         ...defaultState,
         quoteId: '1',
-        content: "New quote"
+        content: "New quote",
+        length: 9,
+        uniqueCharacters: 7
     });
 });
 
-test('should increment errors', () => {
+test('should reset game', () => {
     const action = {
-        type: 'INCREMENT_ERROR',
-    }
+        type: 'RESET_GAME',
+        startTime: 1
+    };
 
-    const state = gamesReducer(defaultState, action);
+    const state = gamesReducer({
+        ...defaultState,
+        usedLetters: ['a'],
+        revealedLetters: ['a'],
+        errors: 2,
+        duration: 222
+    }, action);
+
     expect(state).toEqual({
         ...defaultState,
-        errors: 1
+        duration: 1
     });
 });
 
@@ -77,7 +87,7 @@ test('should calculate duration', () => {
     const endTime = 1643919374122;
 
     const action = {
-        type: 'END_TIMING',
+        type: 'STOP_TIMING',
         endTime
     }
 
@@ -100,16 +110,39 @@ test('should use letter', () => {
 
     const state = gamesReducer({
         ...defaultState,
-        content: 'A',
-        revealedLetters: [false]
+        content: 'ABCD FGH',
+        revealedLetters: []
     }, action);
 
     // letter button should be disabled and
     // letter in quote should be revealed
     expect(state).toEqual({
         ...defaultState,
-        content: 'A',
+        content: 'ABCD FGH',
         usedLetters: ['A'],
-        revealedLetters: [true]
+        revealedLetters: ['a']
+    });
+});
+
+test('should increment errors', () => {
+    const action = {
+        type: 'USE_LETTER',
+        usedLetter: 'Y'
+    };
+
+    const state = gamesReducer({
+        ...defaultState,
+        content: 'ABCD FGH',
+        revealedLetters: []
+    }, action);
+
+    // letter button should be disabled and
+    // letter in quote should be revealed
+    expect(state).toEqual({
+        ...defaultState,
+        content: 'ABCD FGH',
+        usedLetters: ['Y'],
+        revealedLetters: [],
+        errors: 1
     });
 });
