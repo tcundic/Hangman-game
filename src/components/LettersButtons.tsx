@@ -49,7 +49,7 @@ export class LettersButtons extends React.Component<Props> {
 
     render() {
         return (
-            <div className="columns">
+            <div className="columns mx-4 my-2">
                 {this.letters.map(letter =>
                     <LetterButton onClick={this.onLetterClick} key={letter} letter={letter} used={!!this.props.game?.usedLetters.includes(letter)} />
                 )}

@@ -22,7 +22,7 @@ export class QuoteLetters extends React.Component<Props> {
 
     render() {
         return(
-            <div className="columns is-justify-content-center is-size-1 has-text-weight-bold is-flex-wrap-wrap">
+            <div className="columns is-justify-content-center is-size-1 has-text-weight-bold is-flex-wrap-wrap mx-4">
                 {this.props.game?.content.split("").map((letter, index) =>
                     <QuoteLetter key={index} letter={letter} isRevealed={this.isLetterRevealed(letter)} />
                 )}

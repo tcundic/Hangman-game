@@ -22,18 +22,31 @@ export const PlayerSettings = (props: Props) => {
     return (
         <div className="columns">
             <div className="column">
-                <div className="is-size-3 has-text-weight-bold">Player: {props.game?.userName}</div>
-                <div className="is-size-3 has-text-weight-bold">Errors: {props.game?.errors}</div>
+                <div
+                    className="is-size-3 has-text-weight-bold has-text-centered-touch">Player: {props.game?.userName}</div>
+                <div
+                    className="is-size-3 has-text-weight-bold has-text-centered-touch">Errors: {props.game?.errors}</div>
             </div>
             <div className="column is-multiline">
-                <button className="button is-info is-large is-pulled-right ml-5" onClick={resetGame}>
+                <button className="button is-info is-large is-pulled-right ml-5 mx-auto is-hidden-touch"
+                        onClick={resetGame}>
+                    Reset game
+                </button>
+                <button className="button is-info is-large ml-5 mx-auto is-hidden-desktop is-block-touch"
+                        onClick={resetGame}>
                     Reset game
                 </button>
                 {isFinishedGame() &&
-                    <button className="button is-info is-large is-pulled-right"
-                            onClick={() => navigate('/highscores')}>
-                        Show highscore
-                    </button>
+                    <>
+                        <button className="button is-info is-large is-pulled-right is-hidden-touch"
+                                onClick={() => navigate('/highscores')}>
+                            Show highscore
+                        </button>
+                        <button className="button is-info is-large is-hidden-desktop is-block-touch mx-auto mt-5"
+                                onClick={() => navigate('/highscores')}>
+                            Show highscore
+                        </button>
+                    </>
                 }
             </div>
         </div>

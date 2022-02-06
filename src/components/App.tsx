@@ -25,10 +25,10 @@ export class App extends React.Component<Props> {
         }
 
         return (
-            <div className="container mt-6">
+            <div className="container mt-6 has-text-centered-touch">
                 <label className="label is-large">Username</label>
                 <div className="field is-grouped">
-                    <p className="control">
+                    <p className="control is-hidden-touch">
                         <input
                             className="input is-large"
                             type="text"
@@ -37,7 +37,19 @@ export class App extends React.Component<Props> {
                             onChange={this.onUsernameChange}
                         />
                     </p>
-                    <p className="control">
+                    <p className="control is-hidden-desktop mx-auto">
+                        <input
+                            className="input is-large mb-5"
+                            type="text"
+                            placeholder="Enter username"
+                            value={this.state.username}
+                            onChange={this.onUsernameChange}
+                        />
+                        <button className="button is-info is-large" onClick={this.onUsernameSave}>
+                            Save username
+                        </button>
+                    </p>
+                    <p className="control is-hidden-touch">
                         <button className="button is-info is-large" onClick={this.onUsernameSave}>
                             Save username
                         </button>
