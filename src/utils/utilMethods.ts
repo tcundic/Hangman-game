@@ -7,10 +7,7 @@ const getUniqueLetters = (quote: string) => new Set(quote.replace(/[^A-Za-z]/g, 
 
 const getNewQuote = async () => {
     const res = await getRandomQuote();
-    if (res) {
-        const {id, content} = res;
-        return {id, content};
-    }
+    return res;
 }
 
 const isFinishedGame = (quote: string, revealedLetters: Array<string>) => {

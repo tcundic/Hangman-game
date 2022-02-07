@@ -14,7 +14,6 @@ const httpClient = (url: string) => axios.create({
 const getRandomQuote = async () => {
     try {
         const res = await httpClient(QUOTABLE_API).get<{ _id: string, content: string }>("/random");
-        console.log(res);
         return {id: res.data._id, content: res.data.content};
     } catch (e) {
         console.error("Error while fetching quote!");
@@ -47,4 +46,4 @@ const getHighscores = async () => {
     }
 };
 
-export {getRandomQuote, sendStatistics, getHighscores};
+export {getRandomQuote, sendStatistics, getHighscores, httpClient};
