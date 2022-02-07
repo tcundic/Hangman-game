@@ -1,8 +1,6 @@
 import React from "react";
 import {connect} from "react-redux";
 import Props from "../models/Props";
-import Highscore from "../models/highscore";
-import Game from "../models/game";
 import QuoteLetter from "./QuoteLetter";
 import {mapDispatchToProps, mapStateToProps} from "../utils/utilMethods";
 

@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render QuoteLetter with displayed letter correctly 1`] = `
+<div
+  className="mx-1 is-inline-block-touch"
+>
+  <p>
+    A
+  </p>
+</div>
+`;
+
+exports[`should render QuoteLetter with hidden letter correctly 1`] = `
+<div
+  className="mx-1 is-inline-block-touch"
+>
+  <p>
+    _
+  </p>
+</div>
+`;

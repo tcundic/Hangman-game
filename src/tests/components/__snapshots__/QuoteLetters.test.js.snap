@@ -1,0 +1,115 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render QuoteLetters correctly 1`] = `
+<div
+  className="columns is-justify-content-center is-size-1 has-text-weight-bold is-flex-wrap-wrap mx-4"
+>
+  <QuoteLetter
+    isRevealed={true}
+    key="0"
+    letter="N"
+  />
+  <QuoteLetter
+    isRevealed={true}
+    key="1"
+    letter="e"
+  />
+  <QuoteLetter
+    isRevealed={false}
+    key="2"
+    letter="w"
+  />
+  <QuoteLetter
+    isRevealed={true}
+    key="3"
+    letter=" "
+  />
+  <QuoteLetter
+    isRevealed={false}
+    key="4"
+    letter="q"
+  />
+  <QuoteLetter
+    isRevealed={false}
+    key="5"
+    letter="u"
+  />
+  <QuoteLetter
+    isRevealed={false}
+    key="6"
+    letter="o"
+  />
+  <QuoteLetter
+    isRevealed={false}
+    key="7"
+    letter="t"
+  />
+  <QuoteLetter
+    isRevealed={true}
+    key="8"
+    letter="e"
+  />
+  <QuoteLetter
+    isRevealed={true}
+    key="9"
+    letter="!"
+  />
+</div>
+`;
+
+exports[`should render QuoteLetters correctly 2`] = `
+<div
+  className="columns is-justify-content-center is-size-1 has-text-weight-bold is-flex-wrap-wrap mx-4"
+>
+  <QuoteLetter
+    isRevealed={true}
+    key="0"
+    letter="N"
+  />
+  <QuoteLetter
+    isRevealed={true}
+    key="1"
+    letter="e"
+  />
+  <QuoteLetter
+    isRevealed={true}
+    key="2"
+    letter="w"
+  />
+  <QuoteLetter
+    isRevealed={true}
+    key="3"
+    letter=" "
+  />
+  <QuoteLetter
+    isRevealed={true}
+    key="4"
+    letter="q"
+  />
+  <QuoteLetter
+    isRevealed={true}
+    key="5"
+    letter="u"
+  />
+  <QuoteLetter
+    isRevealed={true}
+    key="6"
+    letter="o"
+  />
+  <QuoteLetter
+    isRevealed={true}
+    key="7"
+    letter="t"
+  />
+  <QuoteLetter
+    isRevealed={true}
+    key="8"
+    letter="e"
+  />
+  <QuoteLetter
+    isRevealed={true}
+    key="9"
+    letter="!"
+  />
+</div>
+`;
