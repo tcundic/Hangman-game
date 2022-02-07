@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render LetterButton correctly 1`] = `
+<div
+  className="column is-inline-touch"
+>
+  <button
+    className="button is-info is-large my-4"
+    onClick={[Function]}
+  >
+    A
+  </button>
+</div>
+`;
+
+exports[`should render LetterButton correctly when letter is already used 1`] = `
+<div
+  className="column is-inline-touch"
+>
+  <button
+    className="button is-info is-light is-large my-4"
+  >
+    A
+  </button>
+</div>
+`;

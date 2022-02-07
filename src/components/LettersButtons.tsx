@@ -1,8 +1,6 @@
 import React from "react";
 import {connect} from "react-redux";
 import Props from "../models/Props";
-import Game from "../models/game";
-import Highscore from "../models/highscore";
 import LetterButton from "./LetterButton";
 import {stopTiming, useLetter} from "../actions/games";
 import {mapDispatchToProps, mapStateToProps, isFinishedGame} from "../utils/utilMethods";
