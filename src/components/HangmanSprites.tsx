@@ -1,10 +1,11 @@
 import React from "react";
 import {connect} from "react-redux";
 import Props from "../models/Props";
-import Game from "../models/game";
-import Highscore from "../models/highscore";
 import Sprite from "../utils/Sprite";
 import {mapDispatchToProps, mapStateToProps} from "../utils/utilMethods";
+//import packageJson from '../../package.json';
+
+//const HANGMAN_SPRITES_URL = `${packageJson.homepage}/hangman.png`;
 
 export class HangmanSprites extends React.Component<Props> {
 
@@ -33,6 +34,7 @@ export class HangmanSprites extends React.Component<Props> {
 
     render() {
         const {x, y, width, height} = this.getSpritePosition(this.props.game?.errors);
+        //return <Sprite filename={HANGMAN_SPRITES_URL} x={x} y={y} width={width} height={height} />
         return <Sprite filename="./hangman.png" x={x} y={y} width={width} height={height} />
     }
 };

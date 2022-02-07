@@ -1,0 +1,91 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render Header correctly 1`] = `
+<Sprite
+  filename="./hangman.png"
+  height={170}
+  width={120}
+  x={0}
+  y={0}
+/>
+`;
+
+exports[`should render Header correctly 2`] = `
+<Sprite
+  filename="./hangman.png"
+  height={170}
+  width={130}
+  x={120}
+  y={0}
+/>
+`;
+
+exports[`should render Header correctly 3`] = `
+<Sprite
+  filename="./hangman.png"
+  height={170}
+  width={130}
+  x={250}
+  y={0}
+/>
+`;
+
+exports[`should render Header correctly 4`] = `
+<Sprite
+  filename="./hangman.png"
+  height={170}
+  width={130}
+  x={370}
+  y={0}
+/>
+`;
+
+exports[`should render Header correctly 5`] = `
+<Sprite
+  filename="./hangman.png"
+  height={170}
+  width={120}
+  x={0}
+  y={170}
+/>
+`;
+
+exports[`should render Header correctly 6`] = `
+<Sprite
+  filename="./hangman.png"
+  height={170}
+  width={125}
+  x={120}
+  y={170}
+/>
+`;
+
+exports[`should render Header correctly 7`] = `
+<Sprite
+  filename="./hangman.png"
+  height={170}
+  width={130}
+  x={240}
+  y={170}
+/>
+`;
+
+exports[`should render Header correctly 8`] = `
+<Sprite
+  filename="./hangman.png"
+  height={170}
+  width={130}
+  x={370}
+  y={170}
+/>
+`;
+
+exports[`should render Header correctly 9`] = `
+<Sprite
+  filename="./hangman.png"
+  height={170}
+  width={130}
+  x={370}
+  y={170}
+/>
+`;
