@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render Sprite correctly 1`] = `
+<div
+  className="mb-6 mx-auto"
+  style={
+    Object {
+      "backgroundImage": "url(file)",
+      "backgroundPosition": "-1px -1px",
+      "backgroundRepeat": "no-repeat",
+      "height": "1",
+      "width": "1",
+    }
+  }
+/>
+`;
+
+exports[`should return null if no arguments are passed 1`] = `""`;

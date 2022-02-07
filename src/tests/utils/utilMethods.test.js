@@ -4,8 +4,8 @@ import {
     isFinishedGame,
     mapDispatchToProps,
     mapStateToProps
-} from "../utils/utilMethods";
-import { getRandomQuote, httpClient } from "../utils/http";
+} from "../../utils/utilMethods";
+import { getRandomQuote, httpClient } from "../../utils/http";
 
 const QUOTE = 'New quote';
 
